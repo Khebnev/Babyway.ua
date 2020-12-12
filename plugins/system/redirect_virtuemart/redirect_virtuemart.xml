@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<extension type="plugin" version="3.0" method="upgrade" group="system">
+    <name>redirect_virtuemart</name>
+    <author>Vladimir Egorov</author>
+    <authorEmail>mail@sitogon.ru</authorEmail>
+    <authorUrl>sitogon.ru</authorUrl>
+    <copyright></copyright>
+    <license></license>
+    <version>1.0</version>
+    <description>PLG_REDIRECT_VIRTUEMART_DESC</description>
+    <scriptfile>script.php</scriptfile>
+    <files>
+        <filename plugin="redirect_virtuemart">redirect_virtuemart.php</filename>
+        <filename>index.html</filename>
+    </files>
+	<languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_redirect_virtuemart.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_system_redirect_virtuemart.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_system_redirect_virtuemart.sys.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.plg_system_redirect_virtuemart.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+				<field 
+						name="menu_id"
+						type="sql"
+						label="PLG_REDIRECT_VIRTUEMART_MENU_ID"
+						required="false"
+						default=""
+						query="SELECT id, title FROM #__content"
+						key_field="id"
+						value_field="title">
+				</field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>
